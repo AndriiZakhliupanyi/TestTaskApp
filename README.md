@@ -1,18 +1,16 @@
 # TestTaskApp
 
 - [Requirements](#requirements)
-- [Project build](#project-build)
+- [Run project](#run-project)
 - [Environment](#environment)
 
 ## Requirements
 
 iOS 15.0+
 
-## Project build
+## Run project
 
-1) Install pods:
-
-`pod install`
+1) For install pods run command in terminal (in folder of project): `pod install`
 
 For install `Cocoapods` go to [site](https://cocoapods.org/).
 

@@ -40,7 +40,7 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
                 
                 return .success(models)
             } catch let error {
-                debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
+                consoleLog("Fetch error: \(error) description: \(error.localizedDescription)")
                 
                 return .failure(.failedFetching(error))
             }
@@ -62,7 +62,7 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
             
             return .success(models)
         } catch let error {
-            debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
+            consoleLog("Fetch error: \(error) description: \(error.localizedDescription)")
             
             return .failure(.failedFetching(error))
         }
@@ -79,7 +79,7 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
                 try self?.coreManager.managedContext.execute(deleteRequest)
             }
         } catch let error {
-            debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
+            consoleLog("Fetch error: \(error) description: \(error.localizedDescription)")
             
             return false
         }

@@ -39,6 +39,12 @@ custom_rules:
     regex: 'print\(.*\)'
     message: "Print should not be used in final code version"
     
+  debugprint_usage:
+    included: ".*\\.swift"
+    name: "debugPrint() method usage"
+    regex: 'debugPrint\(.*\)'
+    message: "Debug print should not be used in final code version"
+    
   capturing_list_space:
     included: ".*\\.swift"
     name: "Space in capturing list"

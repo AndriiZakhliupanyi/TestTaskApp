@@ -26,11 +26,11 @@ struct Movie: Decodable {
 
 extension Movie {
     
-    static var placeholder: Movie {
+    static func placeholder(id: Int) -> Movie {
         return Movie(
-            id: "1",
-            rank: "1",
-            title: "Movie",
+            id: "\(id)",
+            rank: "\(id)",
+            title: "Movie - \(id)",
             fullTitle: "The movie",
             year: "2023",
             image: "https://imdb-api.com/images/original/nopicture.jpg",
@@ -38,5 +38,9 @@ extension Movie {
             imDbRating: "10",
             imDbRatingCount: "100"
         )
+    }
+    
+    static var placeholder: Movie {
+        return placeholder(id: 1)
     }
 }

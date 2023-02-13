@@ -16,7 +16,7 @@ final class CoreDataManager {
         let container = NSPersistentContainer(name: modelName)
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
-                debugPrint("Unresolved error \(error), \(error.userInfo)")
+                consoleLog("Unresolved error \(error), \(error.userInfo)")
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -45,7 +45,7 @@ final class CoreDataManager {
             
             return true
         } catch let error as NSError {
-            debugPrint("Unresolved error \(error), \(error.userInfo)")
+            consoleLog("Unresolved error \(error), \(error.userInfo)")
             
             return false
         }

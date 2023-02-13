@@ -42,6 +42,7 @@ struct TestTaskAppApp: App {
     }
     
     func setupURLCache() {
+        // TODO
         URLCache.shared.memoryCapacity = 100_000_000 // ~100 MB memory space
         URLCache.shared.diskCapacity = 500_000_000 // ~500 MB disk cache space
     }

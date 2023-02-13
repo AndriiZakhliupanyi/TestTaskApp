@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1FB51FBB299ADE4200457566 /* ListView+Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FBA299ADE4200457566 /* ListView+Assembly.swift */; };
 		1FB51FBD299ADEBD00457566 /* DetailsView+Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FBC299ADEBD00457566 /* DetailsView+Assembly.swift */; };
+		1FB51FBF299AE29600457566 /* ConsoleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FBE299AE29600457566 /* ConsoleLog.swift */; };
+		1FB51FC1299AE6DC00457566 /* MoviesServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FC0299AE6DC00457566 /* MoviesServiceStub.swift */; };
+		1FB51FC3299AE79500457566 /* RestMoviesServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FC2299AE79500457566 /* RestMoviesServiceStub.swift */; };
+		1FB51FC5299AE81A00457566 /* CoreDataMoviesServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FC4299AE81A00457566 /* CoreDataMoviesServiceStub.swift */; };
+		1FB51FC7299AE8F100457566 /* StorageStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FC6299AE8F100457566 /* StorageStub.swift */; };
 		1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */; };
 		1FC74F50299A5E8700EEBE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */; };
 		1FC74F53299A5E8700EEBE80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F52299A5E8700EEBE80 /* Preview Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		045A650AFB88E902D9CB8181 /* Pods-TestTaskApp.release-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskApp.release-dev.xcconfig"; path = "Target Support Files/Pods-TestTaskApp/Pods-TestTaskApp.release-dev.xcconfig"; sourceTree = "<group>"; };
 		1FB51FBA299ADE4200457566 /* ListView+Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListView+Assembly.swift"; sourceTree = "<group>"; };
 		1FB51FBC299ADEBD00457566 /* DetailsView+Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsView+Assembly.swift"; sourceTree = "<group>"; };
+		1FB51FBE299AE29600457566 /* ConsoleLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLog.swift; sourceTree = "<group>"; };
+		1FB51FC0299AE6DC00457566 /* MoviesServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceStub.swift; sourceTree = "<group>"; };
+		1FB51FC2299AE79500457566 /* RestMoviesServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMoviesServiceStub.swift; sourceTree = "<group>"; };
+		1FB51FC4299AE81A00457566 /* CoreDataMoviesServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMoviesServiceStub.swift; sourceTree = "<group>"; };
+		1FB51FC6299AE8F100457566 /* StorageStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageStub.swift; sourceTree = "<group>"; };
 		1FC74F48299A5E8500EEBE80 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskAppApp.swift; sourceTree = "<group>"; };
 		1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +215,7 @@
 				1FC74F67299A620800EEBE80 /* ConfigConstants.swift */,
 				1FC74F9E299A6D9000EEBE80 /* DIContainer.swift */,
 				1FC74FA0299A6D9A00EEBE80 /* ViewModel.swift */,
+				1FB51FBE299AE29600457566 /* ConsoleLog.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				1FC74F72299A67E600EEBE80 /* Storage.swift */,
+				1FB51FC6299AE8F100457566 /* StorageStub.swift */,
 				1FC74F74299A67F700EEBE80 /* StorageCore.swift */,
 			);
 			path = Storage;
@@ -243,6 +255,7 @@
 			children = (
 				1FC74F78299A681700EEBE80 /* MoviesService.swift */,
 				1FC74F7A299A682300EEBE80 /* MoviesServiceImpl.swift */,
+				1FB51FC0299AE6DC00457566 /* MoviesServiceStub.swift */,
 			);
 			path = MoviesService;
 			sourceTree = "<group>";
@@ -252,6 +265,7 @@
 			children = (
 				1FC74F7D299A686400EEBE80 /* RestCore.swift */,
 				1FC74F7F299A687400EEBE80 /* RestMoviesService.swift */,
+				1FB51FC2299AE79500457566 /* RestMoviesServiceStub.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -272,6 +286,7 @@
 			children = (
 				1FC74F85299A68AF00EEBE80 /* CoreDataManager.swift */,
 				1FC74F87299A68BC00EEBE80 /* CoreDataMoviesService.swift */,
+				1FB51FC4299AE81A00457566 /* CoreDataMoviesServiceStub.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -547,6 +562,8 @@
 				1FC74F8C299A68DC00EEBE80 /* ResponseError.swift in Sources */,
 				1FC74FA1299A6D9A00EEBE80 /* ViewModel.swift in Sources */,
 				1FC74F7E299A686400EEBE80 /* RestCore.swift in Sources */,
+				1FB51FC1299AE6DC00457566 /* MoviesServiceStub.swift in Sources */,
+				1FB51FC7299AE8F100457566 /* StorageStub.swift in Sources */,
 				1FC74F8E299A68F200EEBE80 /* Movie.swift in Sources */,
 				1FC74FA8299A703B00EEBE80 /* RootView+ViewModel.swift in Sources */,
 				1FC74F9D299A6D6900EEBE80 /* NavigationUIController.swift in Sources */,
@@ -557,7 +574,9 @@
 				1FC74FBA299A722500EEBE80 /* MovieRow.swift in Sources */,
 				1FC74F9B299A6D5100EEBE80 /* HostingController.swift in Sources */,
 				1FC74F9F299A6D9000EEBE80 /* DIContainer.swift in Sources */,
+				1FB51FC3299AE79500457566 /* RestMoviesServiceStub.swift in Sources */,
 				1FB51FBD299ADEBD00457566 /* DetailsView+Assembly.swift in Sources */,
+				1FB51FC5299AE81A00457566 /* CoreDataMoviesServiceStub.swift in Sources */,
 				1FC74F86299A68AF00EEBE80 /* CoreDataManager.swift in Sources */,
 				1FC74F94299A692D00EEBE80 /* MovieAdapter.swift in Sources */,
 				1FB51FBB299ADE4200457566 /* ListView+Assembly.swift in Sources */,
@@ -565,6 +584,7 @@
 				1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */,
 				1FC74F79299A681700EEBE80 /* MoviesService.swift in Sources */,
 				1FC74F8A299A68D200EEBE80 /* Results.swift in Sources */,
+				1FB51FBF299AE29600457566 /* ConsoleLog.swift in Sources */,
 				1FC74FA3299A6ED700EEBE80 /* NavigationService.swift in Sources */,
 				1FC74F68299A620800EEBE80 /* ConfigConstants.swift in Sources */,
 				1FC74F83299A689000EEBE80 /* ResponseMovies.swift in Sources */,
