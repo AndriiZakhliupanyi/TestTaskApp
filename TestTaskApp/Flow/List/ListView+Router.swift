@@ -9,7 +9,7 @@ import SwiftUI
 
 protocol ListRouter: AnyObject {
     
-//    func openModule()
+    func openDetails(movie: Movie)
 }
 
 extension ListView {
@@ -22,11 +22,11 @@ extension ListView {
             self.diContainer = diContainer
         }
         
-//        func openModule() {
-//            let router = ModuleView.ModuleRouterImpl(diContainer: diContainer)
-//            let viewModel = ModuleView.ModuleViewModel(router: router, diContainer: diContainer)
-//            let view = ModuleView(viewModel: viewModel)
-//            diContainer.services.navigationService.push(view)
-//        }
+        func openDetails(movie: Movie) {
+            let router = DetailsView.DetailsRouterImpl(diContainer: diContainer)
+            let viewModel = DetailsView.DetailsViewModel(movie: movie, router: router, diContainer: diContainer)
+            let view = DetailsView(viewModel: viewModel)
+            diContainer.navigationService.push(view)
+        }
     }
 }

@@ -15,10 +15,10 @@ struct MovieRow: View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
                 Text(movie.title)
-                    .foregroundColor(Asset.Colors.info)
+                    .font(.system(.title3))
                 Text(L10n.List.rank(movie.rank))
-                    .foregroundColor(Asset.Colors.info)
             }
+            .foregroundColor(Asset.Colors.info)
             Spacer()
             AsyncImage(url: movie.imageURL) { phase in
                 if let image = phase.image {
@@ -33,9 +33,11 @@ struct MovieRow: View {
                     ProgressView()
                 }
             }
+            .cornerRadius(12)
             .frame(width: 75, height: 75)
         }
-        .padding(12)
+        .padding([.vertical, .leading], 12)
+        .padding(.trailing, 8)
     }
 }
 

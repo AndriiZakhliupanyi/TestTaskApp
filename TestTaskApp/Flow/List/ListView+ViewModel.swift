@@ -34,8 +34,8 @@ extension ListView {
             }
         }
         
-        func openDetails(movie: Movie) {
-            
+        func handle(movie: Movie) {
+            router.openDetails(movie: movie)
         }
     }
 }

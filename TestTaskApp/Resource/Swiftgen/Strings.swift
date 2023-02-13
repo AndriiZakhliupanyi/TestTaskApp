@@ -10,6 +10,22 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
+  public enum Details {
+    /// IMDB: %@
+    public static func imDbRating(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "details.imDbRating", String(describing: p1), fallback: "IMDB: %@")
+    }
+    /// Rank: %@
+    public static func rank(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "details.rank", String(describing: p1), fallback: "Rank: %@")
+    }
+    /// Details
+    public static let title = L10n.tr("Localizable", "details.title", fallback: "Details")
+    /// Count title: %@
+    public static func titleCount(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "details.titleCount", String(describing: p1), fallback: "Count title: %@")
+    }
+  }
   public enum List {
     /// Rank: %@
     public static func rank(_ p1: Any) -> String {

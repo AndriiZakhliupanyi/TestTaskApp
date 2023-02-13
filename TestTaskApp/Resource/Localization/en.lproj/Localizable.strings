@@ -1,2 +1,12 @@
+
+/// MARK: - List
+
 "list.title" = "Top movies";
 "list.rank" = "Rank: %@";
+
+/// MARK: - Details
+
+"details.title" = "Details";
+"details.titleCount" = "Count title: %@";
+"details.rank" = "Rank: %@";
+"details.imDbRating" = "IMDB: %@";

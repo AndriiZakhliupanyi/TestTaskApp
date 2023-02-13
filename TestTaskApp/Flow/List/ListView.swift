@@ -15,7 +15,7 @@ struct ListView: View {
         List {
             ForEach(viewModel.movies, id: \.id) { movie in
                 Button {
-                    viewModel.openDetails(movie: movie)
+                    viewModel.handle(movie: movie)
                 } label: {
                     MovieRow(movie: movie)
                 }
@@ -25,6 +25,7 @@ struct ListView: View {
             viewModel.reload()
         }
         .navigationTitle(L10n.List.title)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
