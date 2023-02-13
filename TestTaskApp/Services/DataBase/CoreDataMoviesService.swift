@@ -31,12 +31,13 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
             let sortByRank = NSSortDescriptor(key: "rank", ascending: true)
             fetchRequest.sortDescriptors = [sortByRank]
             fetchRequest.fetchLimit = 10
+            
             do {
                 let models: [Movie] = try await coreManager.managedContext.perform { [weak self] in
                     let results = try self?.coreManager.managedContext.fetch(fetchRequest) ?? []
                     return results.map({ MovieAdapter(object: $0).model })
                 } ?? []
-                print("FROM CORE DATA")
+                
                 return .success(models)
             } catch let error {
                 debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
@@ -49,16 +50,17 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
     func getMovies(query: String) async -> MoviesResult {
         let fetchRequest = MovieObject.fetchRequest()
         fetchRequest.predicate = NSPredicate(
-            format: "title LIKE %@", query
+            format: "title CONTAINS[cd] %@", query
         )
         fetchRequest.fetchLimit = 10
         
         do {
-            let results = try await coreManager.managedContext.perform { [weak self] in
-                try self?.coreManager.managedContext.fetch(fetchRequest)
+            let models: [Movie] = try await coreManager.managedContext.perform { [weak self] in
+                let results = try self?.coreManager.managedContext.fetch(fetchRequest) ?? []
+                return results.map({ MovieAdapter(object: $0).model })
             } ?? []
             
-            return .success(results.map({ MovieAdapter(object: $0).model }))
+            return .success(models)
         } catch let error {
             debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
             

@@ -12,38 +12,46 @@ struct DetailsView: View {
     @StateObject var viewModel: DetailsViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(viewModel.movie.title)
                 .font(.system(.title))
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(L10n.Details.titleCount(viewModel.titleCount))
-                    Text(L10n.Details.imDbRating(viewModel.movie.imDbRating))
-                    Text(L10n.Details.rank(viewModel.movie.rank))
-                }
-                Spacer()
-                AsyncImage(url: viewModel.movie.imageURL) { phase in
-                    if let image = phase.image {
-                        image
-                          .resizable()
-                          .aspectRatio(contentMode: .fit)
-                    } else if phase.error != nil {
-                        Asset.Images.placeholder.image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } else {
-                        ProgressView()
-                    }
-                }
-                .cornerRadius(12)
-                .frame(width: 100, height: 100)
-            }
+                .foregroundColor(Asset.Colors.accept)
+            middleView
+            Text(L10n.Details.crew(viewModel.movie.crew))
+                .foregroundColor(Asset.Colors.info)
             Spacer()
         }
-        .foregroundColor(Asset.Colors.info)
         .padding(.vertical, 8)
         .padding(.horizontal, 20)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(L10n.Details.title)
+    }
+    
+    var middleView: some View {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 10) {
+                Text(L10n.Details.titleCount(viewModel.titleCount))
+                Text(L10n.Details.imDbRating(viewModel.movie.imDbRating))
+                Text(L10n.Details.rank(viewModel.movie.rank))
+                Text(L10n.Details.year(viewModel.movie.year))
+            }
+            .foregroundColor(Asset.Colors.info)
+            Spacer()
+            AsyncImage(url: viewModel.movie.imageURL) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else if phase.error != nil {
+                    Asset.Images.placeholder.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    ProgressView()
+                }
+            }
+            .cornerRadius(12)
+            .frame(width: 100, height: 100)
+        }
     }
 }
 

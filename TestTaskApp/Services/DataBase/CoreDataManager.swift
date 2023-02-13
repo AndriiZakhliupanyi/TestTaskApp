@@ -34,8 +34,8 @@ final class CoreDataManager {
     func save() async -> Bool {
         let hasChanges = await managedContext.perform { [weak self] in
             self?.managedContext.hasChanges
-        } ?? false
-        guard hasChanges else {
+        }
+        guard hasChanges == true else {
             return false
         }
         do {

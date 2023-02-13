@@ -13,19 +13,44 @@ struct ListView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.movies, id: \.id) { movie in
-                Button {
-                    viewModel.handle(movie: movie)
-                } label: {
-                    MovieRow(movie: movie)
+            switch viewModel.state {
+            case .error:
+                infoView(text: L10n.List.Movies.error + " 🤷")
+            case .loading:
+                infoView(text: L10n.List.Movies.loading + " ⌛")
+            case .movies(let movies):
+                if movies.isEmpty {
+                    infoView(text: L10n.List.Movies.empty + " 😞")
+                } else {
+                    moviesView(items: movies)
                 }
             }
         }
+        .searchable(text: $viewModel.searchText, prompt: L10n.List.Search.placeholder)
         .refreshable {
             viewModel.reload()
         }
         .navigationTitle(L10n.List.title)
-        .navigationBarTitleDisplayMode(.large)
+    }
+    
+    func infoView(text: String) -> some View {
+        HStack {
+            Spacer()
+            Text(text)
+                .foregroundColor(Asset.Colors.info)
+            Spacer()
+        }
+        .frame(height: 100)
+    }
+    
+    func moviesView(items: [Movie]) -> some View {
+        ForEach(items, id: \.id) { movie in
+            Button {
+                viewModel.handle(movie: movie)
+            } label: {
+                MovieRow(movie: movie)
+            }
+        }
     }
 }
 

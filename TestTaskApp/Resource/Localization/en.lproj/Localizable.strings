@@ -2,11 +2,17 @@
 /// MARK: - List
 
 "list.title" = "Top movies";
+"list.search.placeholder" = "Name of movie";
+"list.movies.empty" = "No movies";
+"list.movies.loading" = "Loading...";
+"list.movies.error" = "Something went wrong";
 "list.rank" = "Rank: %@";
 
 /// MARK: - Details
 
-"details.title" = "Details";
+"details.title" = "Details of movie";
 "details.titleCount" = "Count title: %@";
-"details.rank" = "Rank: %@";
 "details.imDbRating" = "IMDB: %@";
+"details.rank" = "Rank: %@";
+"details.year" = "Year: %@";
+"details.crew" = "Crew: %@";
