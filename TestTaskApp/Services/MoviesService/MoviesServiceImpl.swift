@@ -9,6 +9,8 @@ import Foundation
 
 class MoviesServiceImpl: MoviesService {
     
+    private let timeLifeData: CGFloat = 60 * 5 // 5 min
+    
     private let restService: RestMoviesService
     private let coreDataService: CoreDataMoviesService
     private let storage: Storage
@@ -17,7 +19,6 @@ class MoviesServiceImpl: MoviesService {
         guard let lastUpdatedMovies = storage.lastUpdatedMovies else {
             return false
         }
-        let timeLifeData: CGFloat = 60 * 5 // 5 min
         
         return Date().timeIntervalSince1970 - lastUpdatedMovies.timeIntervalSince1970 < timeLifeData
     }
@@ -28,27 +29,36 @@ class MoviesServiceImpl: MoviesService {
         self.storage = storage
     }
     
-    private func fetchMovies() async {
+    private func fetchMovies() async throws {
         let moviesResult = await restService.movies.map(\.items)
-        if let movies = try? moviesResult.get() {
-            await coreDataService.save(movies: movies)
-            storage.lastUpdatedMovies = .now
-        }
+        let movies = try moviesResult.get()
+        await coreDataService.save(movies: movies)
+        storage.lastUpdatedMovies = .now
     }
     
     var movies: MoviesResult {
         get async {
-            if !isActualMovies {
-                await fetchMovies()
+            sleep(4)
+            do {
+                if !isActualMovies {
+                    try await fetchMovies()
+                }
+                return await coreDataService.movies
+            } catch {
+                return .failure(.failedFetching(error))
             }
-            return await coreDataService.movies
         }
     }
 
     func getMovies(query: String) async -> MoviesResult {
-        if !isActualMovies {
-            await fetchMovies()
+        sleep(4)
+        do {
+            if !isActualMovies {
+                try await fetchMovies()
+            }
+            return await coreDataService.getMovies(query: query)
+        } catch {
+            return .failure(.failedFetching(error))
         }
-        return await coreDataService.getMovies(query: query)
     }
 }

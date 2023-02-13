@@ -25,9 +25,9 @@ public enum L10n {
     }
     /// Details of movie
     public static let title = L10n.tr("Localizable", "details.title", fallback: "Details of movie")
-    /// Count title: %@
+    /// Count of title: %@
     public static func titleCount(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "details.titleCount", String(describing: p1), fallback: "Count title: %@")
+      return L10n.tr("Localizable", "details.titleCount", String(describing: p1), fallback: "Count of title: %@")
     }
     /// Year: %@
     public static func year(_ p1: Any) -> String {

@@ -11,7 +11,7 @@
 /// MARK: - Details
 
 "details.title" = "Details of movie";
-"details.titleCount" = "Count title: %@";
+"details.titleCount" = "Count of title: %@";
 "details.imDbRating" = "IMDB: %@";
 "details.rank" = "Rank: %@";
 "details.year" = "Year: %@";

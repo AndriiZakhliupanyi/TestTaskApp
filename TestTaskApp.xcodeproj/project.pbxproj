@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB51FBB299ADE4200457566 /* ListView+Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FBA299ADE4200457566 /* ListView+Assembly.swift */; };
+		1FB51FBD299ADEBD00457566 /* DetailsView+Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FBC299ADEBD00457566 /* DetailsView+Assembly.swift */; };
 		1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */; };
 		1FC74F50299A5E8700EEBE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */; };
 		1FC74F53299A5E8700EEBE80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F52299A5E8700EEBE80 /* Preview Assets.xcassets */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		045A650AFB88E902D9CB8181 /* Pods-TestTaskApp.release-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskApp.release-dev.xcconfig"; path = "Target Support Files/Pods-TestTaskApp/Pods-TestTaskApp.release-dev.xcconfig"; sourceTree = "<group>"; };
+		1FB51FBA299ADE4200457566 /* ListView+Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListView+Assembly.swift"; sourceTree = "<group>"; };
+		1FB51FBC299ADEBD00457566 /* DetailsView+Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsView+Assembly.swift"; sourceTree = "<group>"; };
 		1FC74F48299A5E8500EEBE80 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskAppApp.swift; sourceTree = "<group>"; };
 		1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				1FC74FAD299A708500EEBE80 /* ListView.swift */,
 				1FC74FAC299A708500EEBE80 /* ListView+ViewModel.swift */,
 				1FC74FAB299A708500EEBE80 /* ListView+Router.swift */,
+				1FB51FBA299ADE4200457566 /* ListView+Assembly.swift */,
 				1FC74FB8299A721100EEBE80 /* Rows */,
 			);
 			path = List;
@@ -351,6 +356,7 @@
 				1FC74FB4299A71B800EEBE80 /* DetailsView.swift */,
 				1FC74FB3299A71B800EEBE80 /* DetailsView+ViewModel.swift */,
 				1FC74FB2299A71B800EEBE80 /* DetailsView+Router.swift */,
+				1FB51FBC299ADEBD00457566 /* DetailsView+Assembly.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -551,8 +557,10 @@
 				1FC74FBA299A722500EEBE80 /* MovieRow.swift in Sources */,
 				1FC74F9B299A6D5100EEBE80 /* HostingController.swift in Sources */,
 				1FC74F9F299A6D9000EEBE80 /* DIContainer.swift in Sources */,
+				1FB51FBD299ADEBD00457566 /* DetailsView+Assembly.swift in Sources */,
 				1FC74F86299A68AF00EEBE80 /* CoreDataManager.swift in Sources */,
 				1FC74F94299A692D00EEBE80 /* MovieAdapter.swift in Sources */,
+				1FB51FBB299ADE4200457566 /* ListView+Assembly.swift in Sources */,
 				1FC74FB6299A71B800EEBE80 /* DetailsView+ViewModel.swift in Sources */,
 				1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */,
 				1FC74F79299A681700EEBE80 /* MoviesService.swift in Sources */,

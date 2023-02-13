@@ -23,9 +23,7 @@ extension ListView {
         }
         
         func openDetails(movie: Movie) {
-            let router = DetailsView.DetailsRouterImpl(diContainer: diContainer)
-            let viewModel = DetailsView.DetailsViewModel(movie: movie, router: router, diContainer: diContainer)
-            let view = DetailsView(viewModel: viewModel)
+            let view = DetailsView.assembly(movie: movie, diContainer: diContainer)
             diContainer.navigationService.push(view)
         }
     }

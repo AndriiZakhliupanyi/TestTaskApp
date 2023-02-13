@@ -13,8 +13,8 @@ struct RootView: View {
     
     var body: some View {
         NavigationUIController(
-            rootView: ListView(viewModel: viewModel.listViewModel()),
-            coordinator: viewModel.navigationUICoordinator()
+            rootView: viewModel.rootView,
+            coordinator: viewModel.navigationUICoordinator
         )
         .background(
             Asset.Colors.background.color

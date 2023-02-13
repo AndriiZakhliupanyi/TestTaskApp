@@ -13,19 +13,16 @@ extension RootView {
         
         private let diContainer: DIContainer
         
-        init(diContainer: DIContainer) {
-            self.diContainer = diContainer
-        }
-        
-        func navigationUICoordinator() -> NavigationUICoordinator {
+        var navigationUICoordinator: NavigationUICoordinator {
             return NavigationUICoordinator(diContainer: diContainer)
         }
         
-        func listViewModel() -> ListView.ListViewModel {
-            return ListView.ListViewModel(
-                router: ListView.ListRouterImpl(diContainer: diContainer),
-                diContainer: diContainer
-            )
+        var rootView: some View {
+            return ListView.assembly(diContainer: diContainer)
+        }
+        
+        init(diContainer: DIContainer) {
+            self.diContainer = diContainer
         }
     }
 }

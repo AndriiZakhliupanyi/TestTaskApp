@@ -36,6 +36,7 @@ extension ListView {
         
         private func setupBinding() {
             $searchText
+                .dropFirst()
                 .debounce(for: 0.5, scheduler: RunLoop.main)
                 .eraseToAnyPublisher()
                 .sink { [weak self] _ in
@@ -49,13 +50,16 @@ extension ListView {
             lastTask = Task { @MainActor [weak self] in
                 self?.state = .loading
                 let moviesResult: MoviesResult?
-                print("Start")
+                
                 if searchText.isEmpty {
                     moviesResult = await self?.diContainer.moviesService.movies
                 } else {
                     moviesResult = await self?.diContainer.moviesService.getMovies(query: searchText)
                 }
-                print("End")
+                
+                guard !Task.isCancelled else {
+                    return
+                }
                 
                 guard let moviesResult = moviesResult else {
                     self?.state = .error
