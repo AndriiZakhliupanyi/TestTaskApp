@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MoviesServiceImpl {
+class MoviesServiceImpl: MoviesService {
     
     private let restService: RestMoviesService
     private let coreDataService: CoreDataMoviesService

@@ -27,19 +27,19 @@ final class DIContainer {
 
 extension DIContainer {
     
-//    static var preview: DIContainer {
-//        let navigationService = NavigationService()
-//        let storage = StorageImpl()
-//        let moviesService = MoviesServiceImpl(
-//            restService: <#T##RestMoviesService#>,
-//            coreDataService: <#T##CoreDataMoviesService#>,
-//            storage: <#T##Storage#>
-//        )
-//        
-//        return DIContainer(
-//            navigationService: navigationService,
-//            moviesService: moviesService,
-//            storage: storage
-//        )
-//    }
+    static var preview: DIContainer {
+        let navigationService = NavigationService()
+        let storage = StorageImpl()
+        let moviesService = MoviesServiceImpl(
+            restService: RestMoviesServiceImpl(),
+            coreDataService: CoreDataMoviesServiceImpl(coreManager: .init(modelName: "DataModel")),
+            storage: storage
+        )
+
+        return DIContainer(
+            navigationService: navigationService,
+            moviesService: moviesService,
+            storage: storage
+        )
+    }
 }

@@ -18,7 +18,6 @@ struct NavigationUIController<T: View>: UIViewControllerRepresentable {
         let navigationController = UINavigationController(rootViewController: hostingController)
         navigationController.navigationBar.prefersLargeTitles = false
         context.coordinator.set(navigationController)
-        navigationController.interactivePopGestureRecognizer?.delegate = context.coordinator
         
         return navigationController
     }
