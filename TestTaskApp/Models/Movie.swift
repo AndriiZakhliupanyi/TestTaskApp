@@ -23,3 +23,20 @@ struct Movie: Decodable {
         return URL(string: image)
     }
 }
+
+extension Movie {
+    
+    static var placeholder: Movie {
+        return Movie(
+            id: "1",
+            rank: "1",
+            title: "Movie",
+            fullTitle: "The movie",
+            year: "2023",
+            image: "https://imdb-api.com/images/original/nopicture.jpg",
+            crew: "",
+            imDbRating: "10",
+            imDbRatingCount: "100"
+        )
+    }
+}

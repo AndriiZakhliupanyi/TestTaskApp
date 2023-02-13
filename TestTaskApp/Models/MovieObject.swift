@@ -11,12 +11,13 @@ import CoreData
 @objc(MovieObject)
 final class MovieObject: NSManagedObject {
 
-    @nonobjc class func fetchRequest() -> NSFetchRequest<MovieObject> {
+    @nonobjc
+    class func fetchRequest() -> NSFetchRequest<MovieObject> {
         return NSFetchRequest<MovieObject>(entityName: "MovieObject")
     }
     
     @NSManaged var id: String
-    @NSManaged var rank: String
+    @NSManaged var rank: Int32
     @NSManaged var title: String
     @NSManaged var fullTitle: String
     @NSManaged var year: String

@@ -18,7 +18,7 @@ struct MovieAdapter {
     var model: Movie {
         return Movie(
             id: object.id,
-            rank: object.rank,
+            rank: String(object.rank),
             title: object.title,
             fullTitle: object.fullTitle,
             year: object.year,

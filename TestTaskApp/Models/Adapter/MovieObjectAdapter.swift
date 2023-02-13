@@ -19,7 +19,7 @@ struct MovieObjectAdapter {
     
     func toMovieObject() {
         object.id = model.id
-        object.rank = model.rank
+        object.rank = Int32(model.rank) ?? 0
         object.title = model.title
         object.fullTitle = model.fullTitle
         object.year = model.year

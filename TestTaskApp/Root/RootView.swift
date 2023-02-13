@@ -16,10 +16,11 @@ struct RootView: View {
             rootView: ListView(viewModel: viewModel.listViewModel()),
             coordinator: viewModel.navigationUICoordinator()
         )
-//        .background(
-//            Asset.Colors.primary.color
-//                .ignoresSafeArea()
-//        )
+        .background(
+            Asset.Colors.background.color
+                .ignoresSafeArea()
+        )
+        .ignoresSafeArea()
     }
 }
 

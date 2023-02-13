@@ -5,7 +5,7 @@
 	<key>Host</key>
 	<string>$(HOST)</string>
 	<key>Imdb key</key>
-	<string>${IMDB_KEY}</string>
+	<string>$(IMDB_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

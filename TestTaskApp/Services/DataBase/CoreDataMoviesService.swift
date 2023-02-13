@@ -32,11 +32,12 @@ final class CoreDataMoviesServiceImpl: CoreDataMoviesService {
             fetchRequest.sortDescriptors = [sortByRank]
             fetchRequest.fetchLimit = 10
             do {
-                let results = try await coreManager.managedContext.perform { [weak self] in
-                    try self?.coreManager.managedContext.fetch(fetchRequest)
+                let models: [Movie] = try await coreManager.managedContext.perform { [weak self] in
+                    let results = try self?.coreManager.managedContext.fetch(fetchRequest) ?? []
+                    return results.map({ MovieAdapter(object: $0).model })
                 } ?? []
-                
-                return .success(results.map({ MovieAdapter(object: $0).model }))
+                print("FROM CORE DATA")
+                return .success(models)
             } catch let error {
                 debugPrint("Fetch error: \(error) description: \(error.localizedDescription)")
                 

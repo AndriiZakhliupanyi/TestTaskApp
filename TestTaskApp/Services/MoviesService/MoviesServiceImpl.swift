@@ -17,7 +17,7 @@ class MoviesServiceImpl: MoviesService {
         guard let lastUpdatedMovies = storage.lastUpdatedMovies else {
             return false
         }
-        let timeLifeData: CGFloat = 0 // 5 min
+        let timeLifeData: CGFloat = 60 * 5 // 5 min
         
         return Date().timeIntervalSince1970 - lastUpdatedMovies.timeIntervalSince1970 < timeLifeData
     }
@@ -28,24 +28,26 @@ class MoviesServiceImpl: MoviesService {
         self.storage = storage
     }
     
+    private func fetchMovies() async {
+        let moviesResult = await restService.movies.map(\.items)
+        if let movies = try? moviesResult.get() {
+            await coreDataService.save(movies: movies)
+            storage.lastUpdatedMovies = .now
+        }
+    }
+    
     var movies: MoviesResult {
         get async {
-            if isActualMovies {
-                return await coreDataService.movies
-            } else {
-                let moviesResult = await restService.movies.map(\.items)
-                if let movies = try? moviesResult.get() {
-                    await coreDataService.save(movies: movies)
-                    storage.lastUpdatedMovies = .now
-                }
-                return moviesResult
+            if !isActualMovies {
+                await fetchMovies()
             }
+            return await coreDataService.movies
         }
     }
 
     func getMovies(query: String) async -> MoviesResult {
         if !isActualMovies {
-            _ = await movies
+            await fetchMovies()
         }
         return await coreDataService.getMovies(query: query)
     }

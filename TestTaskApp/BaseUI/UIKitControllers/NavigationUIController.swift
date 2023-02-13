@@ -16,7 +16,7 @@ struct NavigationUIController<T: View>: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UINavigationController {
         let hostingController = HostingController(rootView: rootView)
         let navigationController = UINavigationController(rootViewController: hostingController)
-        navigationController.navigationBar.prefersLargeTitles = false
+        navigationController.navigationBar.prefersLargeTitles = true
         context.coordinator.set(navigationController)
         
         return navigationController

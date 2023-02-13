@@ -12,7 +12,19 @@ struct ListView: View {
     @StateObject var viewModel: ListViewModel
     
     var body: some View {
-        Text("List")
+        List {
+            ForEach(viewModel.movies, id: \.id) { movie in
+                Button {
+                    viewModel.openDetails(movie: movie)
+                } label: {
+                    MovieRow(movie: movie)
+                }
+            }
+        }
+        .refreshable {
+            viewModel.reload()
+        }
+        .navigationTitle(L10n.List.title)
     }
 }
 
