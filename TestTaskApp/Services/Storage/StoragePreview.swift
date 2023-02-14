@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class StorageStub: Storage {
+final class StoragePreview: Storage {
     
     var lastUpdatedMovies: Date? {
         get {

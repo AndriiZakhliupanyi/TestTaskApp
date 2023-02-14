@@ -47,30 +47,37 @@ extension ListView {
         
         func reload() {
             lastTask?.cancel()
-            lastTask = Task { @MainActor [weak self] in
-                self?.state = .loading
-                let moviesResult: MoviesResult?
-                
-                if searchText.isEmpty {
-                    moviesResult = await self?.diContainer.moviesService.movies
-                } else {
-                    moviesResult = await self?.diContainer.moviesService.getMovies(query: searchText)
-                }
-                
-                guard !Task.isCancelled else {
-                    return
-                }
-                
-                guard let moviesResult = moviesResult else {
-                    self?.state = .error
-                    return
-                }
-                switch moviesResult {
-                case .success(let movies):
-                    self?.state = .movies(movies)
-                case .failure:
-                    self?.state = .error
-                }
+            lastTask = Task { [weak self] in
+                consoleLog("Start")
+                await self?.fetchMovies()
+            }
+        }
+        
+        @MainActor
+        func fetchMovies() async {
+            state = .loading
+            let moviesResult: MoviesResult?
+            
+            if searchText.isEmpty {
+                moviesResult = await diContainer.moviesService.movies
+            } else {
+                moviesResult = await diContainer.moviesService.getMovies(query: searchText)
+            }
+            
+            guard !Task.isCancelled else {
+                return
+            }
+            
+            consoleLog("End")
+            guard let moviesResult = moviesResult else {
+                state = .error
+                return
+            }
+            switch moviesResult {
+            case .success(let movies):
+                state = .movies(movies)
+            case .failure:
+                state = .error
             }
         }
         

@@ -29,8 +29,12 @@ extension DIContainer {
     
     static var preview: DIContainer {
         let navigationService = NavigationService()
-        let storage = StorageStub()
-        let moviesService = MoviesServiceStub()
+        let storage = StoragePreview()
+        let moviesService = MoviesServiceImpl(
+            restService: RestMoviesServicePreview(),
+            coreDataService: CoreDataMoviesServicePreview(),
+            storage: storage
+        )
 
         return DIContainer(
             navigationService: navigationService,

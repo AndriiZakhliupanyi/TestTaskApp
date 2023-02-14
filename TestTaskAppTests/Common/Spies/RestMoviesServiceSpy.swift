@@ -1,16 +1,19 @@
 //
-//  RestMoviesServiceStub.swift
-//  TestTaskApp
+//  RestMoviesServiceSpy.swift
+//  TestTaskAppTests
 //
-//  Created by Andrii Zakhliupanyi on 13.02.2023.
+//  Created by Andrii Zakhliupanyi on 14.02.2023.
 //
 
+@testable import TestTaskApp
 import Foundation
 
-final class RestMoviesServiceStub: RestMoviesService {
+final class RestMoviesServiceSpy: RestMoviesService {
     
+    var moviesCountCalled: Int = 0
     var movies: ResponseResult<ResponseMovies> {
         get async {
+            moviesCountCalled += 1
             return .success(
                 .init(
                     items: [

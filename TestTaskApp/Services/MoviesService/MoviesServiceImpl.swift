@@ -30,7 +30,6 @@ class MoviesServiceImpl: MoviesService {
     }
     
     private func fetchMovies() async throws {
-        sleep(1)
         let moviesResult = await restService.movies.map(\.items)
         let movies = try moviesResult.get()
         await coreDataService.save(movies: movies)
