@@ -23,4 +23,8 @@ final class ImageCacheManager: ObservableObject {
             images[url] = image
         }
     }
+    
+    func clear() {
+        images = [:]
+    }
 }

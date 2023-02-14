@@ -34,7 +34,7 @@ extension Movie {
             fullTitle: "The movie",
             year: "2023",
             image: "https://imdb-api.com/images/original/nopicture.jpg",
-            crew: "",
+            crew: "First, Second.",
             imDbRating: "10",
             imDbRatingCount: "100"
         )

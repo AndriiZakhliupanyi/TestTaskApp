@@ -35,9 +35,12 @@ struct MovieRow_Previews: PreviewProvider {
         Group {
             MovieRow(movie: .placeholder)
                 .preferredColorScheme(.light)
+                .previewDisplayName("Light")
             MovieRow(movie: .placeholder)
                 .preferredColorScheme(.dark)
+                .previewDisplayName("Dark")
         }
+        .environmentObject(ImageCacheManager())
         .previewLayout(.sizeThatFits)
     }
 }

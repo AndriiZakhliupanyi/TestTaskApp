@@ -11,7 +11,7 @@ final class StoragePreview: Storage {
     
     var lastUpdatedMovies: Date? {
         get {
-            return Date().addingTimeInterval(-60 * 10)
+            return Date()
         }
         set {}
     }

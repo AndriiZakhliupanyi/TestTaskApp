@@ -48,6 +48,10 @@ extension ListView {
             reload()
         }
         
+        func handleRefresh() {
+            reload()
+        }
+        
         func handle(movie: Movie) {
             router.openDetails(movie: movie)
         }

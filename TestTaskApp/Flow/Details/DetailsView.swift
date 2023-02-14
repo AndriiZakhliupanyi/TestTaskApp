@@ -46,12 +46,26 @@ struct DetailsView: View {
 struct DetailsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        DetailsView(
-            viewModel: .init(
-                movie: .placeholder,
-                router: DetailsView.DetailsRouterImpl(diContainer: .preview),
-                diContainer: .preview
+        Group {
+            DetailsView(
+                viewModel: .init(
+                    movie: .placeholder,
+                    router: DetailsView.DetailsRouterImpl(diContainer: .preview),
+                    diContainer: .preview
+                )
             )
-        )
+            .preferredColorScheme(.light)
+            .previewDisplayName("Light")
+            DetailsView(
+                viewModel: .init(
+                    movie: .placeholder,
+                    router: DetailsView.DetailsRouterImpl(diContainer: .preview),
+                    diContainer: .preview
+                )
+            )
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Dark")
+        }
+        .environmentObject(ImageCacheManager())
     }
 }

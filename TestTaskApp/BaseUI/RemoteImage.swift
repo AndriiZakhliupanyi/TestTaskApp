@@ -23,18 +23,18 @@ struct RemoteImage: View {
                     if let image = phase.image {
                         imageView(url: url, image: image)
                     } else if phase.error != nil {
-                        placeholder
+                        placeholderView
                     } else {
-                        ProgressView()
+                        progressView
                     }
                 }
             }
         } else {
-            placeholder
+            placeholderView
         }
     }
     
-    var placeholder: some View {
+    var placeholderView: some View {
         Asset.Images.placeholder.image
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -46,5 +46,9 @@ struct RemoteImage: View {
         return image
             .resizable()
             .aspectRatio(contentMode: .fit)
+    }
+    
+    var progressView: some View {
+        ProgressView()
     }
 }

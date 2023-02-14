@@ -28,7 +28,7 @@ struct ListView: View {
         }
         .searchable(text: $viewModel.searchText, prompt: L10n.List.Search.placeholder)
         .refreshable {
-            viewModel.reload()
+            viewModel.handleRefresh()
         }
         .onAppear {
             viewModel.handleAppear()
@@ -60,11 +60,24 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ListView(
-            viewModel: .init(
-                router: ListView.ListRouterImpl(diContainer: .preview),
-                diContainer: .preview
+        Group {
+            ListView(
+                viewModel: .init(
+                    router: ListView.ListRouterImpl(diContainer: .preview),
+                    diContainer: .preview
+                )
             )
-        )
+            .preferredColorScheme(.light)
+            .previewDisplayName("Light")
+            ListView(
+                viewModel: .init(
+                    router: ListView.ListRouterImpl(diContainer: .preview),
+                    diContainer: .preview
+                )
+            )
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Dark")
+        }
+        .environmentObject(ImageCacheManager())
     }
 }
