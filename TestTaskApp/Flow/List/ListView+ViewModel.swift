@@ -48,7 +48,6 @@ extension ListView {
         func reload() {
             lastTask?.cancel()
             lastTask = Task { [weak self] in
-                consoleLog("Start")
                 await self?.fetchMovies()
             }
         }
@@ -68,7 +67,6 @@ extension ListView {
                 return
             }
             
-            consoleLog("End")
             guard let moviesResult = moviesResult else {
                 state = .error
                 return

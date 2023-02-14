@@ -20,21 +20,9 @@ struct MovieRow: View {
             }
             .foregroundColor(Asset.Colors.info)
             Spacer()
-            AsyncImage(url: movie.imageURL) { phase in
-                if let image = phase.image {
-                    image
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                } else if phase.error != nil {
-                    Asset.Images.placeholder.image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else {
-                    ProgressView()
-                }
-            }
-            .cornerRadius(12)
-            .frame(width: 75, height: 75)
+            RemoteImage(url: movie.imageURL)
+                .cornerRadius(12)
+                .frame(width: 75, height: 75)
         }
         .padding([.vertical, .leading], 12)
         .padding(.trailing, 8)

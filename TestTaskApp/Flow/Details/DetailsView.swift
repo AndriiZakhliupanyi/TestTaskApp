@@ -36,21 +36,9 @@ struct DetailsView: View {
             }
             .foregroundColor(Asset.Colors.info)
             Spacer()
-            AsyncImage(url: viewModel.movie.imageURL) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else if phase.error != nil {
-                    Asset.Images.placeholder.image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else {
-                    ProgressView()
-                }
-            }
-            .cornerRadius(12)
-            .frame(width: 100, height: 100)
+            RemoteImage(url: viewModel.movie.imageURL)
+                .cornerRadius(12)
+                .frame(width: 100, height: 100)
         }
     }
 }

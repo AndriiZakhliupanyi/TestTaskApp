@@ -18,6 +18,9 @@
 		1FB51FDD299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FDC299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift */; };
 		1FB51FE1299BF31C00457566 /* ListViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE0299BF31C00457566 /* ListViewViewModelTests.swift */; };
 		1FB51FE4299BF40000457566 /* MoviesServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE3299BF40000457566 /* MoviesServiceStub.swift */; };
+		1FB51FE8299C03CD00457566 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE7299C03CD00457566 /* RemoteImage.swift */; };
+		1FB51FEA299C078200457566 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE9299C078200457566 /* ImageCacheManager.swift */; };
+		1FB51FEC299C094400457566 /* MoviesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FEB299C094400457566 /* MoviesServiceSpy.swift */; };
 		1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */; };
 		1FC74F50299A5E8700EEBE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */; };
 		1FC74F53299A5E8700EEBE80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F52299A5E8700EEBE80 /* Preview Assets.xcassets */; };
@@ -84,6 +87,9 @@
 		1FB51FDC299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMoviesServiceSpy.swift; sourceTree = "<group>"; };
 		1FB51FE0299BF31C00457566 /* ListViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewViewModelTests.swift; sourceTree = "<group>"; };
 		1FB51FE3299BF40000457566 /* MoviesServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceStub.swift; sourceTree = "<group>"; };
+		1FB51FE7299C03CD00457566 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		1FB51FE9299C078200457566 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		1FB51FEB299C094400457566 /* MoviesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceSpy.swift; sourceTree = "<group>"; };
 		1FC74F48299A5E8500EEBE80 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskAppApp.swift; sourceTree = "<group>"; };
 		1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		1FB51FD9299BEBA200457566 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
+				1FB51FEB299C094400457566 /* MoviesServiceSpy.swift */,
 				1FB51FDA299BEC0400457566 /* RestMoviesServiceSpy.swift */,
 				1FB51FDC299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift */,
 			);
@@ -316,6 +323,7 @@
 				1FC74F7C299A684F00EEBE80 /* Rest */,
 				1FC74F84299A689F00EEBE80 /* DataBase */,
 				1FC74FA2299A6ED700EEBE80 /* NavigationService.swift */,
+				1FB51FE9299C078200457566 /* ImageCacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -400,6 +408,7 @@
 		1FC74F98299A6D3500EEBE80 /* BaseUI */ = {
 			isa = PBXGroup;
 			children = (
+				1FB51FE7299C03CD00457566 /* RemoteImage.swift */,
 				1FC74F99299A6D4600EEBE80 /* UIKitControllers */,
 			);
 			path = BaseUI;
@@ -664,6 +673,7 @@
 				1FB51FDD299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift in Sources */,
 				1FB51FE1299BF31C00457566 /* ListViewViewModelTests.swift in Sources */,
 				1FB51FDB299BEC0400457566 /* RestMoviesServiceSpy.swift in Sources */,
+				1FB51FEC299C094400457566 /* MoviesServiceSpy.swift in Sources */,
 				1FB51FD8299BE93A00457566 /* MoviesServiceImplTests.swift in Sources */,
 				1FB51FE4299BF40000457566 /* MoviesServiceStub.swift in Sources */,
 			);
@@ -681,6 +691,7 @@
 				1FC74F88299A68BC00EEBE80 /* CoreDataMoviesService.swift in Sources */,
 				1FC74FC1299A7F6500EEBE80 /* Assets.swift in Sources */,
 				1FC74F8C299A68DC00EEBE80 /* ResponseError.swift in Sources */,
+				1FB51FEA299C078200457566 /* ImageCacheManager.swift in Sources */,
 				1FC74FA1299A6D9A00EEBE80 /* ViewModel.swift in Sources */,
 				1FC74F7E299A686400EEBE80 /* RestCore.swift in Sources */,
 				1FB51FC7299AE8F100457566 /* StoragePreview.swift in Sources */,
@@ -700,6 +711,7 @@
 				1FC74F86299A68AF00EEBE80 /* CoreDataManager.swift in Sources */,
 				1FC74F94299A692D00EEBE80 /* MovieAdapter.swift in Sources */,
 				1FB51FBB299ADE4200457566 /* ListView+Assembly.swift in Sources */,
+				1FB51FE8299C03CD00457566 /* RemoteImage.swift in Sources */,
 				1FC74FB6299A71B800EEBE80 /* DetailsView+ViewModel.swift in Sources */,
 				1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */,
 				1FC74F79299A681700EEBE80 /* MoviesService.swift in Sources */,

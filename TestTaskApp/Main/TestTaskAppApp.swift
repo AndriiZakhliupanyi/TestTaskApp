@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct TestTaskAppApp: App {
     
+    @StateObject var imageCache = ImageCacheManager()
+
     private let diContainer: DIContainer
     
     init() {
@@ -28,22 +30,16 @@ struct TestTaskAppApp: App {
         )
         
         setupNavigation()
-        setupURLCache()
     }
     
     var body: some Scene {
         WindowGroup {
             RootView(viewModel: RootView.RootViewModel(diContainer: diContainer))
+                .environmentObject(imageCache)
         }
     }
     
     func setupNavigation() {
         UINavigationBar.appearance().tintColor = Asset.Colors.info.uiColor
-    }
-    
-    func setupURLCache() {
-        // TODO
-        URLCache.shared.memoryCapacity = 100_000_000 // ~100 MB memory space
-        URLCache.shared.diskCapacity = 500_000_000 // ~500 MB disk cache space
     }
 }
