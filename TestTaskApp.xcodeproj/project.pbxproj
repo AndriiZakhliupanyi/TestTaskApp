@@ -16,11 +16,12 @@
 		1FB51FD8299BE93A00457566 /* MoviesServiceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FD7299BE93A00457566 /* MoviesServiceImplTests.swift */; };
 		1FB51FDB299BEC0400457566 /* RestMoviesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FDA299BEC0400457566 /* RestMoviesServiceSpy.swift */; };
 		1FB51FDD299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FDC299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift */; };
-		1FB51FE1299BF31C00457566 /* ListViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE0299BF31C00457566 /* ListViewViewModelTests.swift */; };
+		1FB51FE1299BF31C00457566 /* ListViewViewModelStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE0299BF31C00457566 /* ListViewViewModelStatesTests.swift */; };
 		1FB51FE4299BF40000457566 /* MoviesServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE3299BF40000457566 /* MoviesServiceStub.swift */; };
 		1FB51FE8299C03CD00457566 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE7299C03CD00457566 /* RemoteImage.swift */; };
 		1FB51FEA299C078200457566 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FE9299C078200457566 /* ImageCacheManager.swift */; };
 		1FB51FEC299C094400457566 /* MoviesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FEB299C094400457566 /* MoviesServiceSpy.swift */; };
+		1FB51FEE299C0AB600457566 /* ListViewViewModelFetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB51FED299C0AB600457566 /* ListViewViewModelFetchTests.swift */; };
 		1FC74F4C299A5E8500EEBE80 /* TestTaskAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */; };
 		1FC74F50299A5E8700EEBE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */; };
 		1FC74F53299A5E8700EEBE80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC74F52299A5E8700EEBE80 /* Preview Assets.xcassets */; };
@@ -85,11 +86,12 @@
 		1FB51FD7299BE93A00457566 /* MoviesServiceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceImplTests.swift; sourceTree = "<group>"; };
 		1FB51FDA299BEC0400457566 /* RestMoviesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMoviesServiceSpy.swift; sourceTree = "<group>"; };
 		1FB51FDC299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMoviesServiceSpy.swift; sourceTree = "<group>"; };
-		1FB51FE0299BF31C00457566 /* ListViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewViewModelTests.swift; sourceTree = "<group>"; };
+		1FB51FE0299BF31C00457566 /* ListViewViewModelStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewViewModelStatesTests.swift; sourceTree = "<group>"; };
 		1FB51FE3299BF40000457566 /* MoviesServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceStub.swift; sourceTree = "<group>"; };
 		1FB51FE7299C03CD00457566 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1FB51FE9299C078200457566 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		1FB51FEB299C094400457566 /* MoviesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServiceSpy.swift; sourceTree = "<group>"; };
+		1FB51FED299C0AB600457566 /* ListViewViewModelFetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewViewModelFetchTests.swift; sourceTree = "<group>"; };
 		1FC74F48299A5E8500EEBE80 /* TestTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC74F4B299A5E8500EEBE80 /* TestTaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskAppApp.swift; sourceTree = "<group>"; };
 		1FC74F4F299A5E8700EEBE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,7 +192,8 @@
 		1FB51FDF299BF31300457566 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1FB51FE0299BF31C00457566 /* ListViewViewModelTests.swift */,
+				1FB51FE0299BF31C00457566 /* ListViewViewModelStatesTests.swift */,
+				1FB51FED299C0AB600457566 /* ListViewViewModelFetchTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -671,8 +674,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FB51FDD299BEC6A00457566 /* CoreDataMoviesServiceSpy.swift in Sources */,
-				1FB51FE1299BF31C00457566 /* ListViewViewModelTests.swift in Sources */,
+				1FB51FE1299BF31C00457566 /* ListViewViewModelStatesTests.swift in Sources */,
 				1FB51FDB299BEC0400457566 /* RestMoviesServiceSpy.swift in Sources */,
+				1FB51FEE299C0AB600457566 /* ListViewViewModelFetchTests.swift in Sources */,
 				1FB51FEC299C094400457566 /* MoviesServiceSpy.swift in Sources */,
 				1FB51FD8299BE93A00457566 /* MoviesServiceImplTests.swift in Sources */,
 				1FB51FE4299BF40000457566 /* MoviesServiceStub.swift in Sources */,

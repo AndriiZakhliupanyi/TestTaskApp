@@ -1,5 +1,5 @@
 //
-//  ListViewViewModelTests.swift
+//  ListViewViewModelStatesTests.swift
 //  TestTaskAppTests
 //
 //  Created by Andrii Zakhliupanyi on 14.02.2023.
@@ -7,9 +7,8 @@
 
 @testable import TestTaskApp
 import XCTest
-import UIKit
 
-final class ListViewViewModelTests: XCTestCase {
+final class ListViewViewModelStatesTests: XCTestCase {
     
     var listViewModel: ListView.ListViewModel!
     var moviesService: MoviesServiceStub!
@@ -68,23 +67,30 @@ final class ListViewViewModelTests: XCTestCase {
         XCTAssertTrue(isErrorState)
     }
     
-    func testStateLoading() async {
+    func testStateLoading() {
         // Given
+        moviesService.moviesHandler = {
+            sleep(1)
+            return .success([.placeholder])
+        }
         let loadingExpectation = expectation(description: "Loading test")
         
         // When
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        Task {
+            await listViewModel.fetchMovies()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             loadingExpectation.fulfill()
         }
         
         // Then
-        wait(for: [loadingExpectation], timeout: 0.3)
-        let isErrorState: Bool
+        wait(for: [loadingExpectation], timeout: 1)
+        let isLoadingState: Bool
         if case .loading = listViewModel.state {
-            isErrorState = true
+            isLoadingState = true
         } else {
-            isErrorState = false
+            isLoadingState = false
         }
-        XCTAssertTrue(isErrorState)
+        XCTAssertTrue(isLoadingState)
     }
 }

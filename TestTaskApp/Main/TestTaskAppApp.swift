@@ -19,7 +19,9 @@ struct TestTaskAppApp: App {
         let storage = StorageImpl()
         let moviesService = MoviesServiceImpl(
             restService: RestMoviesServiceImpl(),
-            coreDataService: CoreDataMoviesServiceImpl(coreManager: .init(modelName: "DataModel")),
+            coreDataService: CoreDataMoviesServiceImpl(
+                coreManager: .init(modelName: "DataModel")
+            ),
             storage: storage
         )
         

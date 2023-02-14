@@ -7,11 +7,10 @@
 
 import SwiftUI
 
+/// Async fetch image with cache within the session.
 struct RemoteImage: View {
     
     @EnvironmentObject var imageCache: ImageCacheManager
-    
-    static var images: [URL: Image] = [:]
     
     let url: URL?
     

@@ -30,7 +30,6 @@ extension ListView {
         init(router: ListRouter, diContainer: DIContainer) {
             self.diContainer = diContainer
             self.router = router
-            reload()
             setupBinding()
         }
         
@@ -43,6 +42,14 @@ extension ListView {
                     self?.reload()
                 }
                 .store(in: &subscriptions)
+        }
+        
+        func handleAppear() {
+            reload()
+        }
+        
+        func handle(movie: Movie) {
+            router.openDetails(movie: movie)
         }
         
         func reload() {
@@ -77,10 +84,6 @@ extension ListView {
             case .failure:
                 state = .error
             }
-        }
-        
-        func handle(movie: Movie) {
-            router.openDetails(movie: movie)
         }
     }
 }

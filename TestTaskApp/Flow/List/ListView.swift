@@ -30,6 +30,9 @@ struct ListView: View {
         .refreshable {
             viewModel.reload()
         }
+        .onAppear {
+            viewModel.handleAppear()
+        }
         .navigationTitle(L10n.List.title)
     }
     
