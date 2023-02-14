@@ -4,10 +4,23 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TestTaskApp.xcscheme_^#shared#^_</key>
+		<key>TestTaskApp-Dev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TestTaskApp-Prod.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1FC74F47299A5E8500EEBE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

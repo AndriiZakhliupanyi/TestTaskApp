@@ -1,0 +1,17 @@
+strings:
+  - inputs:
+    - TestTaskApp/Resource/Localization/en.lproj/Localizable.strings
+    outputs:
+      output: TestTaskApp/Resource/Swiftgen/Strings.swift
+      templateName: structured-swift5
+      params:
+        publicAccess: true
+xcassets:
+  - inputs:
+    - TestTaskApp/Resource/Assets/Colors.xcassets
+    - TestTaskApp/Resource/Assets/Images.xcassets
+    outputs:
+      templatePath: swiftgen_templates/xcassets-swiftui.stencil
+      output: TestTaskApp/Resource/Swiftgen/Assets.swift
+      params:
+        publicAccess: true

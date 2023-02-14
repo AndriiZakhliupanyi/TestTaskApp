@@ -1,0 +1,18 @@
+
+/// MARK: - List
+
+"list.title" = "Топ фільми";
+"list.search.placeholder" = "Назва фільму";
+"list.movies.empty" = "Немає фільмів";
+"list.movies.loading" = "Завантаження...";
+"list.movies.error" = "Щось пішло не так";
+"list.rank" = "Ранг: %@";
+
+/// MARK: - Details
+
+"details.title" = "Деталі фільму";
+"details.titleCount" = "К-ть символів: %@";
+"details.imDbRating" = "IMDB: %@";
+"details.rank" = "Ранг: %@";
+"details.year" = "Рік: %@";
+"details.crew" = "Герої: %@";

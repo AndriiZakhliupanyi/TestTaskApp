@@ -1,0 +1,9 @@
+//
+//  ConfigProd.xcconfig
+//  TestTaskApp
+//
+//  Created by Andrii Zakhliupanyi on 13.02.2023.
+//
+
+HOST = imdb-api.com
+IMDB_KEY = k_knnsy25l
